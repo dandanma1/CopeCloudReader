@@ -15,6 +15,7 @@ import com.example.copecloudreader.MainActivity;
 import com.example.copecloudreader.R;
 import com.example.copecloudreader.app.ConstantsImageUrl;
 import com.example.copecloudreader.databinding.ActivityTransitionBinding;
+import com.example.copecloudreader.utils.CommonUtils;
 import com.example.copecloudreader.utils.PerfectClickListener;
 
 import java.util.Random;
@@ -29,11 +30,13 @@ public class TransitionActivity extends AppCompatActivity {
         mBinding =DataBindingUtil.setContentView(this,R.layout.activity_transition);
         int i = new Random().nextInt(ConstantsImageUrl.TRANSITION_URLS.length);
         // 先显示默认图
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        mBinding.ivDefultPic.setImageDrawable(CommonUtils.getDrawable(R.drawable.img_transition_default,null));
+      /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
             mBinding.ivDefultPic.setImageDrawable(getResources().getDrawable(R.drawable.img_transition_default,null));
         }else {
             mBinding.ivDefultPic.setImageDrawable(getResources().getDrawable(R.drawable.img_transition_default));
-        }
+        }*/
         Glide.with(this)
                 .load(ConstantsImageUrl.TRANSITION_URLS[i])
                /* .placeholder(R.drawable.img_transition_default)

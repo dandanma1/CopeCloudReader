@@ -24,4 +24,7 @@ public class CommonUtils {
         return CloudReaderApplication.getInstance().getResources();
     }
 
+    public static int getColor(int ResId) {
+      return   getResource().getColor(ResId);
+    }
 }

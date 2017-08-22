@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         initStatusView();
         initId();
         initRxBus();
-
+//这部分代码设置后有什么影响，不添加的时候也是一样
         StatusBarUtil.setColorNoTranslucentForDrawerLayout(MainActivity.this,drawerLayout,
                 CommonUtils.getColor(R.color.colorTheme));
     }

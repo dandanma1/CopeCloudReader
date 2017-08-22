@@ -17,6 +17,7 @@ import com.example.copecloudreader.databinding.ActivityMainBinding;
 import com.example.copecloudreader.http.rx.RxBus;
 import com.example.copecloudreader.http.rx.RxBusBaseMessage;
 import com.example.copecloudreader.http.rx.RxCodeConstants;
+import com.example.copecloudreader.utils.CommonUtils;
 import com.example.copecloudreader.view.statusbar.StatusBarUtil;
 
 import rx.functions.Action1;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         initStatusView();
         initId();
         initRxBus();
+
+        StatusBarUtil.setColorNoTranslucentForDrawerLayout(MainActivity.this,drawerLayout,
+                CommonUtils.getColor(R.color.colorTheme));
     }
 
 
